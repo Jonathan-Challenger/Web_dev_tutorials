@@ -24,7 +24,7 @@ a {
 
 .showcase {
     background-color: $primary-color;
-    color: white;
+    color: set-text-color($primary-color);
     height: 600px;
 
     // Nesting
@@ -40,6 +40,10 @@ a {
 
         li {
             padding: 15px;
+        }
+
+        a {
+            color: set-text-color($primary-color)
         }
 
         a:hover {
