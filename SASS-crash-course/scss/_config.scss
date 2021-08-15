@@ -1,7 +1,7 @@
 // Declaring variables
 $light-color: #f4f4f4;
-// $primary-color: #0e6cff;
-$primary-color: #e0ffff;
+$primary-color: #0e6cff;
+// $primary-color: #e0ffff;
 $secondary-color: #ff8700;
 $font-stack: Arial, Helvetica, sans-serif;
 
@@ -13,4 +13,11 @@ $font-stack: Arial, Helvetica, sans-serif;
     } @else {
         @return white;
     }
+}
+
+// Set background and text color (mixins)
+
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
 }
