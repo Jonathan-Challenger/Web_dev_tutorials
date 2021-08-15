@@ -1,5 +1,16 @@
 // Declaring variables
 $light-color: #f4f4f4;
-$primary-color: #0e6cff;
+// $primary-color: #0e6cff;
+$primary-color: #e0ffff;
 $secondary-color: #ff8700;
 $font-stack: Arial, Helvetica, sans-serif;
+
+// Set text color based on background color (functions)
+
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+        @return #333;
+    } @else {
+        @return white;
+    }
+}
