@@ -29,7 +29,6 @@ a {
     color: white;
     height: 600px;
 
-
     // Nesting
     nav {
         display: flex;
@@ -44,10 +43,35 @@ a {
         li {
             padding: 15px;
         }
+
+        a:hover {
+            color: $secondary-color;
+        }
     }
 
     a {
         color: white;
+    }
+
+    // Use & to replace parent (parent is .showcase so compiled as .showcase-content)
+    &-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 20px 0;
+        }
     }
 }
 
