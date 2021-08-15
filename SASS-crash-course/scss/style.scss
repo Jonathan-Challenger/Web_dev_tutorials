@@ -50,10 +50,6 @@ a {
         }
     }
 
-    a {
-        color: white;
-    }
-
     // Use & to replace parent (parent is .showcase so compiled as .showcase-content)
     &-content {
         height: 100%;

@@ -14,10 +14,10 @@
     // Use inheritance to extend the btn styling into .btn-primary
     @extend %btn;
     // Lighten and darken used to change the color to easier distinguish
-    background-color: lighten($primary-color, 10%);
+    @include set-background(lighten($primary-color, 10%));
 }
 
 .btn-secondary {
     @extend %btn;
-    background-color: $secondary-color;
+    @include set-background($secondary-color);
 }
