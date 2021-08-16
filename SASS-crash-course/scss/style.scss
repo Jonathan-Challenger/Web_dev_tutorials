@@ -1,6 +1,4 @@
 @import 'config';
-@import 'utilities';
-@import 'buttons';
 
 * {
     box-sizing: border-box;
@@ -56,6 +54,7 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 30px;
 
         img {
             width: 50%;
@@ -67,3 +66,7 @@ a {
         }  
     }
 }
+
+@import 'mobile';
+@import 'utilities';
+@import 'buttons';
