@@ -4,3 +4,29 @@
     margin: 0 auto;
     overflow: auto;
 }
+
+// Margin and padding classes
+
+// This creates classes to use in html similar to bootstrap using for each loop
+$spaceAmounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceAmounts {
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+    .my-#{$space} {
+        margin: #{$space}rem 0;
+    }
+    .mx-#{$space} {
+        margin: 0 #{$space}rem;
+    }
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+    .py-#{$space} {
+        padding: #{$space}rem 0;
+    }
+    .px-#{$space} {
+        padding: 0 #{$space}rem;
+    }
+}
