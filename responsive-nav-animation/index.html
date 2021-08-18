@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" 
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" 
+    crossorigin="anonymous"/>
     <title>Nav Animation</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <nav>
+        <h1>LOGO</h1>
+        <i class="fas fa-bars fa-3x"></i>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="nav-link">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section class="landing">
+        <h1>First section</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut error in magnam maxime repellat? Porro.</p>
+    </section>
+
+    <script>
+        const hamburger = document.querySelector(".fas");
+        const navlinks = document.querySelector(".nav-links");
+        const links = document.querySelectorAll(".nav-links li");
+
+        hamburger.addEventListener("click", () => {
+            navlinks.classList.toggle("open");
+        })
+    </script>
 </body>
 </html>
