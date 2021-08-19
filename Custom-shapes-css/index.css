@@ -10,6 +10,7 @@
     position: relative;
     margin: auto;
     margin-top: 225px;
+    margin-bottom: 225px;
     background-color: rgb(95, 223, 255);
 }
 
@@ -22,4 +23,15 @@
     margin: auto;
     /* Can make custom shapes with border radius properties */
     border-radius: 100% 62% 25% 95% / 100% 29% 23% 67%; 
+}
+
+.shape2 {
+    background-color: rgb(15, 128, 0);
+    height: 400px;
+    width: 300px;
+    inset: 0;
+    position: absolute;
+    margin: auto;
+    /* Use clip path polygon (each arg is a x,y pair for each corner), circle */
+    clip-path: polygon(25px 25px, 90% 50px, 100% 50%, 20% 100%);
 }
