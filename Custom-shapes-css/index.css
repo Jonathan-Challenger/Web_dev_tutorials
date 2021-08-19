@@ -4,6 +4,40 @@
     padding: 0;
 }
 
+h1 {
+    font-size: 2.5rem;
+}
+
+nav {
+    height: 100px;
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    color:white;
+    text-decoration: none;
+    padding: 0 50px;
+    font-size: 1.5rem;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.fas {
+    visibility: hidden;
+}
+
 .container {
     height: 500px;
     width: 700px;
@@ -35,4 +69,38 @@
     margin: auto;
     /* Use clip path polygon (each arg is a x,y pair for each corner), circle */
     clip-path: polygon(25px 25px, 90% 50px, 100% 50%, 20% 100%);
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        padding: 0;
+    }
+
+    .fas {
+        visibility: visible;
+        position: absolute;
+        top: 1.75rem;
+        right: 2rem;
+        cursor: pointer;
+    }
+
+    .fas:hover + .nav-links{
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    li {
+        background-color: red;
+        width: 100%;
+        border-top: 1px solid black;
+        padding: 20px 0;
+    }
 }
