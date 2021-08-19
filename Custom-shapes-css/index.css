@@ -25,6 +25,7 @@
     border-radius: 100% 62% 25% 95% / 100% 29% 23% 67%; 
 }
 
+/* https://bennettfeely.com/clippy/  Website for clip-path cheat sheet */
 .shape2 {
     background-color: rgb(15, 128, 0);
     height: 400px;
