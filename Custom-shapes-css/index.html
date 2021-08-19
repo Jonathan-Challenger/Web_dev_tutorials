@@ -27,5 +27,15 @@
     <div class="container">
         <div class="shape2"></div>
     </div>
+
+    <script>
+        const hamburger = document.querySelector(".fas");
+        const navlinks = document.querySelector(".nav-links");
+        const links = document.querySelectorAll(".nav-links li");
+
+        hamburger.addEventListener("click", () => {
+            navlinks.classList.toggle("open");
+        })
+    </script>
 </body>
 </html>
