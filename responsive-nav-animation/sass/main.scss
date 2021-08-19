@@ -21,6 +21,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    padding: 0 20px;
 
     .nav-links {
         display: flex;
@@ -43,6 +44,10 @@ nav {
 }
 
 @media screen and (max-width: 800px) {
+    nav {
+        padding: 0;
+    }
+
     nav .fas {
         position: absolute;
         top: 1.75rem;
@@ -76,7 +81,7 @@ nav {
 
             @for $i from 1 through 3 {
                 &:nth-child(#{$i}) {
-                    animation: nav-links 300ms*$i ease-in-out forwards;
+                    animation: nav-links 300ms*$i ease forwards;
                 }
             }
         }
