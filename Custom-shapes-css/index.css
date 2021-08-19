@@ -85,16 +85,22 @@ nav {
     }
 
     .fas:hover + .nav-links{
-        display: flex;
+        /* Rectangle */
+        clip-path: inset(0 0 0 0);
+        /* clip-path: circle(141.2% at 100% 0); */
     }
 
     .nav-links {
-        display: none;
         flex-direction: column;
         position: absolute;
         top: 6rem;
         text-align: center;
         width: 100%;
+        /* Rectangle drop down animation */
+        clip-path: inset(0 0 100% 0);
+        /* Circle drop down animation */
+        /* clip-path: circle(0% at 100% 0); */
+        transition: all 1s ease;
     }
 
     li {
