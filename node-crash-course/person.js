@@ -1,7 +1,18 @@
-const person = {
+/* const person = {
     name: 'Jonathan',
     age: 30
+} */
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greeting() {
+        console.log(`My name is ${this.name} and I am ${this.age}.`)
+    }
 }
 
-// Export person object
-module.exports = person;
+// Export person 
+module.exports = Person;
