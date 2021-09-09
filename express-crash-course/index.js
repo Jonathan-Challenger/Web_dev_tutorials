@@ -1,12 +1,11 @@
 const express = require('express');
 const path = require('path');
-const members = require('./Members');
 const logger = require('./middleware/logger');
 
 const app = express();
 
 // Init middleware
-app.use(logger);
+// app.use(logger);
 
 /* 
 Send html file to webpage (this way is not ideal)
@@ -15,13 +14,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 }) */
 
-// Gets all members
-app.get('/api/members', (req, res) => {
-    res.json(members);
-});
-
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Members API routes
+app.use('/api/members', require('./routes/api/members'));
 
 const PORT = process.env.PORT || 5000;
 
