@@ -7,6 +7,10 @@ const app = express();
 // Init middleware
 // app.use(logger);
 
+// Body Parser Middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 /* 
 Send html file to webpage (this way is not ideal)
 
