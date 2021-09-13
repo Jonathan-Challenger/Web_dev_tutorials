@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
     <title>Painting Gallery</title>
 </head>
@@ -27,7 +28,7 @@
             </div>
         </section>
 
-        <section class="card">
+        <section class="card" data-aos="fade-left">
             <img src="https://i.ibb.co/3NHjDcW/paint-2.png" alt="" />
             <div>
                 <h3>Acrylic Painting Two</h3>
@@ -40,7 +41,7 @@
             </div>
         </section>
 
-        <section class="card">
+        <section class="card" data-aos="fade-right">
             <img src="https://i.ibb.co/0VywMkW/paint-3.png" alt="" />
             <div>
                 <h3>Acrylic Painting Three</h3>
@@ -53,7 +54,7 @@
             </div>
         </section>
 
-        <section class="card">
+        <section class="card" data-aos="fade-left">
             <img src="https://i.ibb.co/5LkJFRP/paint-4.png" alt="" />
             <div>
                 <h3>Acrylic Painting Four</h3>
@@ -66,7 +67,7 @@
             </div>
         </section>
 
-        <section class="card">
+        <section class="card" data-aos="fade-right">
             <img src="https://i.ibb.co/61R8Q2y/paint-5.png" alt="" />
             <div>
                 <h3>Acrylic Painting Five</h3>
@@ -79,5 +80,13 @@
             </div>
         </section>
     </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 400,
+          duration: 1000
+      });
+    </script>
 </body>
 </html>
