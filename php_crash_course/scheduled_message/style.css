@@ -1,0 +1,17 @@
+* {
+	padding:  0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 60%;
+	margin:  auto;
+}
+
+p {
+	text-align: center;
+	font-size: 5rem;
+	font-family: Arial;
+	margin-top: 10rem;
+}
