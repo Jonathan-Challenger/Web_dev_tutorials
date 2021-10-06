@@ -16,6 +16,23 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+form {
+    display: flex;
+}
 
+input[type="text"] {
+    flex:10;
+    padding: 10px;
+    border: 1px solid #41b883;
+    outline: none;
+}
+
+input[type="submit"] {
+    flex: 2;
+    background: #41b883;
+    color: #fff;
+    border: 1px solid #41b883;
+    cursor: pointer;
+}
 </style>
