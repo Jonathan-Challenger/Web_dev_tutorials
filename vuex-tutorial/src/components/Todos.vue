@@ -58,4 +58,30 @@ i {
   color: #fff;
   cursor: pointer;
 }
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.complete-box {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #35495e;
+}
+
+.incomplete-box {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #41b883;
+}
+
+@media (max-width: 500px) {
+  .todos {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
