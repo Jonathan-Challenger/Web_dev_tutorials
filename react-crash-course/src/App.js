@@ -32,7 +32,7 @@ function App() {
     // Can use <> </> empty tags which will put content in next parent div in html
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} onDelete={deleteTask}/>
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : "No tasks at the moment"}
     </div>
 
   );
