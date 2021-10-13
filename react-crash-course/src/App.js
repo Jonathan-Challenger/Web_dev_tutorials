@@ -24,11 +24,15 @@ function App() {
     }
   ])
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
   return (
     // Can use <> </> empty tags which will put content in next parent div in html
     <div className="container">
       <Header />
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} onDelete={deleteTask}/>
     </div>
 
   );
