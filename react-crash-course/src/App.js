@@ -24,15 +24,21 @@ function App() {
     }
   ])
 
+  // Delete task
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
+  }
+
+  // Toggle reminder
+  const toggleReminder = (id) => {
+    setTasks(tasks.map((task) => task.id === id ? {...task, reminder:!task.reminder} : task))
   }
 
   return (
     // Can use <> </> empty tags which will put content in next parent div in html
     <div className="container">
       <Header />
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask}/> : "No tasks at the moment"}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : "No tasks at the moment"}
     </div>
 
   );
