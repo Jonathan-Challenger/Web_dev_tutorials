@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Header from './components/Header'
 import Tasks from './components/Tasks';
+import AddTask from "./components/AddTask";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -38,6 +39,7 @@ function App() {
     // Can use <> </> empty tags which will put content in next parent div in html
     <div className="container">
       <Header />
+      <AddTask />
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : "No tasks at the moment"}
     </div>
 
