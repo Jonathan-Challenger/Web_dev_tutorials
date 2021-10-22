@@ -5,7 +5,6 @@ const Posts = () => {
         console.log(123)
     })
 
-
     return (
         <div>
             <h1>Posts</h1>
