@@ -15,12 +15,11 @@ const ShoppingList = ({ getItems, item, deleteItem }) => {
         deleteItem(id);
     }
 
-    const { items } = item;
+    const { items, loading } = item;
 
     return (
         <div>
-            <Container>
-
+            {loading ? <h2 style={{textAlign: "center"}}>Loading</h2> :<Container>
                 <ListGroup>
                     <TransitionGroup className="shopping-list">
                         {items.map(({_id, name}) => (
@@ -40,7 +39,7 @@ const ShoppingList = ({ getItems, item, deleteItem }) => {
                         ))}
                     </TransitionGroup>
                 </ListGroup>
-            </Container>
+            </Container>}
         </div>
     )
 }
