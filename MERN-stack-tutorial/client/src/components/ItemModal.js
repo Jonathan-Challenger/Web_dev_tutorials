@@ -2,8 +2,10 @@ import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } 
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 import { useState } from 'react';
+import {v1 as uuid} from 'uuid';
+import propTypes from 'prop-types';
 
-const ItemModal = () => {
+const ItemModal = ({ addItem }) => {
     const [modal, setModal] = useState(false);
     const [name, setName] = useState('');
 
@@ -12,7 +14,21 @@ const ItemModal = () => {
     }
 
     const handleOnChange = (e) => {
-        setName({ [e.target.name] : e.target.value })
+        setName(e.target.value)
+    }
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+
+        const newItem = {
+            id: uuid(),
+            name
+        }
+
+        // Add item with addItem action
+        addItem(newItem)
+
+        handleToggle();
     }
 
     return (
@@ -26,7 +42,7 @@ const ItemModal = () => {
             <Modal isOpen={modal} toggle={handleToggle}>
                 <ModalHeader toggle={handleToggle}>Add To Shopping List</ModalHeader>
                 <ModalBody>
-                    <Form>
+                    <Form onSubmit={handleOnSubmit}>
                         <FormGroup>
                             <Label for="item">Item</Label>
                             <Input type="text" name="name" id="item" placeholder="Add shopping item" onChange={handleOnChange}>
@@ -40,4 +56,12 @@ const ItemModal = () => {
     )
 }
 
-export default connect()(ItemModal)
+ItemModal.propTypes = {
+    addItem: propTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    item: state.item,
+})
+
+export default connect(mapStateToProps, { addItem })(ItemModal)
