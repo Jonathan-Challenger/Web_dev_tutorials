@@ -1,18 +1,17 @@
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import {v1 as uuid} from 'uuid';
 import { useEffect } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getItems } from '../actions/itemActions';
+import { getItems, deleteItem } from '../actions/itemActions';
 
-const ShoppingList = (props) => {
+const ShoppingList = ({ getItems, item }) => {
 
     useEffect(() => {
-        props.getItems();
-    }, [])
+        getItems();
+    }, [getItems])
 
-    const { items } = props.item;
+    const { items } = item;
 
     return (
         <div>
@@ -23,7 +22,7 @@ const ShoppingList = (props) => {
                 onClick={() => {
                     const name = prompt('Enter Item');
                     if (name) {
-                        const newItem = { id: uuid(), name}
+                        // const newItem = { id: uuid(), name}
                         // setItems([...items, newItem])
                     }
                 }}
@@ -59,6 +58,7 @@ const ShoppingList = (props) => {
 
 ShoppingList.propTypes = {
     getItems: propTypes.func.isRequired,
+    deleteItem: propTypes.func.isRequired,
     item: propTypes.object.isRequired
 }
 
@@ -66,4 +66,4 @@ const mapStateToProps = state => ({
     item: state.item
 });
 
-export default connect(mapStateToProps, { getItems })(ShoppingList);
+export default connect(mapStateToProps, { getItems, deleteItem })(ShoppingList);
