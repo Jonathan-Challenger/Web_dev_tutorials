@@ -2,7 +2,6 @@ import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } 
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 import { useState } from 'react';
-import {v1 as uuid} from 'uuid';
 import propTypes from 'prop-types';
 
 const ItemModal = ({ addItem }) => {
@@ -21,7 +20,6 @@ const ItemModal = ({ addItem }) => {
         e.preventDefault();
 
         const newItem = {
-            id: uuid(),
             name
         }
 
