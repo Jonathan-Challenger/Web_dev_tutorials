@@ -5,30 +5,21 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 
-const ShoppingList = ({ getItems, item }) => {
+const ShoppingList = ({ getItems, item, deleteItem }) => {
 
     useEffect(() => {
         getItems();
     }, [getItems])
+
+    const handleDelete = (id) => {
+        deleteItem(id);
+    }
 
     const { items } = item;
 
     return (
         <div>
             <Container>
-                <Button 
-                color="dark" 
-                style={{marginBottom: '2rem'}} 
-                onClick={() => {
-                    const name = prompt('Enter Item');
-                    if (name) {
-                        // const newItem = { id: uuid(), name}
-                        // setItems([...items, newItem])
-                    }
-                }}
-                >
-                    Add Item
-                </Button>
 
                 <ListGroup>
                     <TransitionGroup className="shopping-list">
@@ -39,9 +30,7 @@ const ShoppingList = ({ getItems, item }) => {
                                         className="remove-btn"
                                         color="danger"
                                         size="sm"
-                                        onClick={() => {
-                                            // setItems(items.filter(item => item.id !== id))
-                                        }}
+                                        onClick={() => handleDelete(id)}
                                     >
                                         &times;
                                     </Button>
